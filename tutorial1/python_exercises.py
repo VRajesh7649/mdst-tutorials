@@ -3,18 +3,24 @@ Intro to python exercises shell code
 """
 
 def is_odd(x):
+    return x % 2 != 0
     """
     returns True if x is odd and False otherwise
     """
 
 
 def is_palindrome(word):
+    return word == word[::-1]
     """
     returns whether `word` is spelled the same forwards and backwards
     """
 
 
 def only_odds(numlist):
+    output = []
+    for i in numlist:
+        output.append(i)
+    return output
     """
     returns a list of numbers that are odd from numlist
 
@@ -23,6 +29,15 @@ def only_odds(numlist):
 
 
 def count_words(text):
+    output = dict()
+    text.lower()
+    words = text.split(" ")
+    for word in words:
+        if word in output:
+            output[word] += 1
+        else:
+            output[word] = 1
+    return output
     """
     return a dictionary of {word: count} in the text
 
